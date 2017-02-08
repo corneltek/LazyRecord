@@ -43,8 +43,8 @@ class MysqlBuilder extends BaseBuilder
             }
             $columnSqls[] = '  '.$this->buildColumnSql($schema, $column);
         }
-        $referencesSqls = $this->buildForeignKeys($schema);
-        $sql .= implode(",\n", array_merge($columnSqls, $referencesSqls));
+        // $referencesSqls = $this->buildForeignKeys($schema);
+        $sql .= implode(",\n", array_merge($columnSqls, []));
 
         $sql .= "\n);\n";
 
